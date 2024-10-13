@@ -18,7 +18,7 @@ To start the project, you need:
 
   
 
-Short description of the project files
+Short description of the project files:
 
 ------------
 ├── .idea <- folder for PyCharm
