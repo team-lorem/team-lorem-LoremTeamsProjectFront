@@ -3,6 +3,7 @@ from pyngrok import ngrok
 from flask import Flask, request, jsonify
 #Импортирует Flask (фреймворк для создания веб-приложений), request (для получения данных из запроса)
 # и jsonify (для формирования JSON-ответа).
+from flask_cors import CORS  # Импортируем CORS
 import os
 #Импортирует модуль для работы с файловой системой
 import asyncio
@@ -12,6 +13,7 @@ from utils import extract_text_from_docx, extract_text_from_pdf, check_complianc
 
 
 app = Flask(__name__)
+CORS(app)  # Включаем CORS для всего приложения
 #Создаётся экземпляр Flask-приложения, которое обрабатывает запросы. Параметр __name__ указывает имя текущего модуля.
 UPLOAD_FOLDER = './uploads'
 if not os.path.exists(UPLOAD_FOLDER):
