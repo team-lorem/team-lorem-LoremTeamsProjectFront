@@ -13,7 +13,6 @@
         >
           {{ msg.text }}
         </div>
-        <!-- Сообщение API -->
         <div
           v-else-if="!msg.isUser && msg.type === 'text'"
           class="api-message-content"
@@ -23,7 +22,7 @@
             alt=""
             class="api-message-content_img"
           />
-          Sorry, but we can only accept files in the format .docx
+          <div v-html="formatApiResponse(msg.text)"></div>
         </div>
         <!-- Сообщение с файлом -->
         <div
@@ -69,8 +68,7 @@
             alt=""
             class="api-message-content_img"
           />
-          Response from the API: {{ msg.apiResponse }}
-          <!-- Изменено -->
+          Response from the API: {{ formatApiResponse(msg.apiResponse) }}
         </div>
       </div>
     </div>
@@ -163,7 +161,7 @@ export default {
           type: "file",
         });
         // Отправляем файл на API
-        const way = "https://6c26-2a12-5940-afb9-00-2.ngrok-free.app/upload";
+        const way = "https://2254-2a12-5940-afb9-00-2.ngrok-free.app/upload";
         const formData = new FormData();
         formData.append("file", file);
 
@@ -198,6 +196,10 @@ export default {
           });
         }
       }
+    },
+    formatApiResponse(responseText) {
+      // Форматирование текста для лучшей читаемости
+      return responseText.replace(/\n/g, "");
     },
   },
 };
