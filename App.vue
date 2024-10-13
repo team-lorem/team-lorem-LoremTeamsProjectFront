@@ -160,7 +160,7 @@ export default {
         this.messages.push({ fileName: file.name, isUser: true, type: "file" });
 
         // Отправляем файл на API
-        const way = "https://1170-217-144-190-219.ngrok-free.app/upload";
+        const way = "https://1513-2a12-5940-afb9-00-2.ngrok-free.app/upload";
         const formData = new FormData();
         formData.append("file", file);
 

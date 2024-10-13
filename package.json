@@ -10,14 +10,15 @@
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.4.5",
+    "vue-router": "^4.0.13",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "webpack-dev-server": "^5.1.0"
   },
   "browserslist": [
     "> 1%",
